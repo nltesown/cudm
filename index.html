@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>Clean Up da Mess</title>
+    <meta charset="UTF-8" />
+    <link href="http://fonts.googleapis.com/css?family=Slackey" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    <!--
+
+    body, form, fieldset, div, label {
+      margin:0; border:0; padding:0;
+      vertical-align:top;
+    }
+    body  {
+      margin:0 auto; border:0; padding:0;
+      max-width:1200px;
+      background-color:#eee;
+      font-family:Tahoma,sans-serif; font-size:12px;
+    }
+    form {
+      padding:12px;
+    }
+    hr {
+      clear:both; visibility: hidden;
+    }
+    ul {
+      padding-left: 18px;
+    }
+    textarea {
+      width:99%; margin:0 0 8px 0; border:solid 1px #666; padding:2px 1px;
+    }
+
+    input[type="submit"] {
+      margin: 0 0 24px 0; border: 0; padding: 8px;
+      font-size: 18px;
+      background-color: #69f; color: #fff;
+    }
+
+    input[type="checkbox"] {
+      margin:0 4px;
+    }
+
+    #opts {
+      float: left;
+      width:600px; margin: 0 12px 12px 0;
+    }
+
+    #opts > div {
+      float:left;
+      width:50%;
+      padding: 2px 12px 2px 0;
+      box-sizing: border-box;
+    }
+
+    #opts > div:hover {
+      background-color: #9cf;
+    }
+
+    #htmlinfo {
+      float:left;
+      width: 400px;
+      border: solid 1px #999; padding: 0 12px;
+     }
+
+     #shoutbox {
+       position:absolute; display: none; z-index:1000; overflow:hidden;
+       text-align:center; text-transform: uppercase;
+       font-weight:bold; font-size:96px; font-family: "Slackey";
+       color: red;
+
+     }
+
+    .markItUpHeader {display: none;}
+
+    .bcount {
+      background-color: #DD0;
+      padding: 1px 4px;
+      border: solid 1px #666;
+    }
+
+    -->
+    </style>
+  </head>
+  <body>
+    <div id="shoutbox"></div>
+    <form>
+    	<fieldset id="opts">
+        <div><input class="opt" type="checkbox" value="-1" id="pdf_lines"><label for="pdf_lines">Supprimer les sauts de lignes simples (PDF)</label></div>
+        <div><input class="opt" type="checkbox" value="-1" id="normalizeBlankLines" checked="true"><label for="normalizeBlankLines">Normaliser les sauts de lignes</label></div>
+        <div><input class="opt" type="checkbox" value="-1" id="frenchquotes" checked="true"><label for="frenchquotes">Conserver les guillemets &laquo;&nbsp;&raquo;</label></div>
+        <div><input class="opt" type="checkbox" value="-1" id="forceFrenchQuotes" checked="true"><label for="forceFrenchQuotes">Remplacer les guillemets "&nbsp;" par &laquo;&nbsp;&raquo;</label></div>
+        <div><input class="opt" type="checkbox" value="-1" id="oelig"><label for="oelig">Remplacer OE/oe par &OElig;/&oelig;</label></div>
+        <div><input class="opt" type="checkbox" value="-1" id="nbsp" checked="true"><label for="nbsp">Espaces insécables HTML automatiques</label></div>
+        <!--<div><input class="opt" type="checkbox" value="-1" id="films"><label>Structurer les fiches film (programme papier) [Beta]</label></div>-->
+      </fieldset>
+      <div id="htmlinfo">
+        <ul>
+          <li>Ctrl-P : Paragraphe (HTML)</li>
+          <li>Ctrl-1 : Titre de niveau 1 (HTML)</li>
+          <li>Ctrl-2 : Titre de niveau 2 (HTML)</li>
+          <li>Ctrl-I : Italique (&lt;em&gt;) (HTML)</li>
+          <li>Ctrl-B : Gras (&lt;strong&gt;) (HTML)</li>
+          <li>Ctrl-espace : espace insécable (&amp;nbsp;) (HTML)</li>
+          <li>Ctrl-G : Guillemets («  »)</li>
+          <li>Ctrl-L : Convertir la sélection en minuscules</li>
+          <li>Ctrl-U : Convertir la sélection en majuscules</li>
+        </ul>
+      </div>
+      <hr />
+      <fieldset>
+        <input type="submit" id="submit" value="Clean Up da Mess"></input>
+        <textarea id="input" rows="40"></textarea>
+        <div id="output"></div>
+    	</fieldset>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><!-- markItUp incompatible with later versions -->
+    <script src="js/jquery.markitup.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
